@@ -1,0 +1,23 @@
+sort1 uses: Bubble sort
+
+How do you know?: very big time difference between Random and Sorted
+
+Random 50000: 8.333s
+Reversed 50000: 6.354s
+Sorted 50000: 0.622s
+
+sort2 uses: Merge sort
+
+How do you know?:
+
+Random 50000: 0.679s
+Reversed 50000: 0.597s
+Sorted 50000: 0.734s
+
+sort3 uses: Selection sort
+
+How do you know?: All time is roughly the same
+
+Random 50000: 3.447s
+Reversed 50000: 3.513s
+Sorted 50000: 3.370s
