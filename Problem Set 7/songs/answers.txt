@@ -1,0 +1,10 @@
+1.If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?:
+
+Very danceability(0,71), sufficient energy(0,66), and moderate valence(0,48)
+
+
+2.Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?:
+
+If we make a calculation on how many songs he has in the library and start from this, then this may not show the correct result.
+The listener may no longer listen to the songs that he has added to the library and may skip them.
+It is better to be based on how many times a person listened to the same song in a certain period (week, month) and make a calculation on more listened songs.

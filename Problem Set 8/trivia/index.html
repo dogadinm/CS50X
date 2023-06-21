@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function()
+            {
+                let correct = document.querySelector("#correct");
+                let incorrect = document.querySelectorAll(".incorrect");
+                let answer = document.querySelector("#answer");
+                let check = document.querySelector("#check");
+                let input = document.querySelector('#input');
+                let open_question = document.querySelector("#open_question");
+
+
+                correct.addEventListener("click", function(){
+                    correct.style.backgroundColor = "green";
+                    answer.innerHTML = "Correct";
+                })
+
+                for (let i = 0; i < incorrect.length; i++){
+                    incorrect[i].addEventListener("click", function(){
+                        incorrect[i].style.backgroundColor = "red";
+                        answer.innerHTML = "Incorrect";
+                    })
+                }
+
+                check.addEventListener("click", function(){
+                    if (input.value === "1961"){
+                        input.style.backgroundColor = "green";
+                        open_question.innerHTML = "Correct";
+                    }
+
+                    else{
+                        input.style.backgroundColor = "red";
+                        open_question.innerHTML = "Inorrect";
+                    }
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which planet in our solar system is the closest to the Sun ?</h3>
+                <button class="incorrect">Mars</button>
+                <button class="incorrect">Jupiter</button>
+                <button id="correct">Mercury</button>
+                <button class="incorrect">Saturn</button>
+                <button class="incorrect">Uranus</button>
+
+                <p id="answer"></p>
+
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What year was the first manned flight into space ?</h3>
+                <input id="input" type = "text">
+                <button id="check">Check Answer</button>
+                <p id = "open_question"></p>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>

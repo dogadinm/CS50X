@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Simbol</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for date in info %}
+        <tr>
+          <td>{{ date["symbol"] }}</td>
+          <td>{{ date["SUM(shares)"] }}</td>
+          <td>{{ date["price"] | usd }}</td>
+          <td>{{ (date["SUM(shares)"] * date["price"]) | usd  }}  </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td scope="col">Cash left</td>
+          <td>{{ cash | usd  }} </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td scope="col">Total</td>
+          <td>{{ total_cash | usd }} </td>
+       </tr>
+    </tbody>
+  </table>
+{% endblock %}
